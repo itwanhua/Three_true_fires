@@ -39,3 +39,13 @@ def profile(req):
 def about(req):
     if req.method == "GET":
         return render(req, "about.html")
+
+
+def login(req):
+    if req.method == "GET":
+        return render(req, "login.html")
+
+
+def register(req):
+    if req.method == "GET":
+        return render(req, "register.html")

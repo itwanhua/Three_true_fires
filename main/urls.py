@@ -11,4 +11,6 @@ urlpatterns = [
     path('news_page', views.news_page),
     path('profile', views.profile),
     path('about', views.about),
+    path('login', views.login),
+    path('register', views.register),
 ]
