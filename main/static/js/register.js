@@ -27,6 +27,20 @@ $(function(){
 			success: function(data){
 				if (data["err"] === 0){
 					// 用户名没有被注册
+					var s = 60;
+					$("#send_code").prop("disabled", true);
+					$("#send_code").html(s + "S");
+					
+					var timer = window.setInterval(function() {
+						--s;
+						if (s === 0) {
+							window.clearInterval(timer);
+							$("#send_code").html("重新发送");
+							$("#send_code").prop("disabled", false);
+							return;
+						}
+						$("#send_code").html(s + "S");
+					}, 1000);
 					// 通过ajax请求后端发送验证码
 					console.log("申请发送验证码")
 					$.ajax({
@@ -39,20 +53,7 @@ $(function(){
 						dataType: "json",
 						success: function(data) {
 							if (data["err"] === 0) {
-								var s = 60;
-								$("#send_code").prop("disabled", true);
-								$("#send_code").html(s + "S");
-								
-								var timer = window.setInterval(function() {
-									--s;
-									if (s === 0) {
-										window.clearInterval(timer);
-										$("#send_code").html("重新发送");
-										$("#send_code").prop("disabled", false);
-										return;
-									}
-									$("#send_code").html(s + "S");
-								}, 1000);
+								// 发送验证码成功！
 							}
 							else {
 								// 失败

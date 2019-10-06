@@ -1,0 +1,57 @@
+.item-title a{
+    position: relative;
+    left: -30em;
+    color: white;
+    font-size: 15px;
+
+}
+
+.item-title a button{
+    border-radius: 80%;
+    font-size: 18px;
+}
+
+.tip p{
+    position: relative;
+    left: 10em;
+    font-size: 20px;;
+    color: white;
+}
+
+.order_info>div{
+    margin-top: 10px;
+    position: relative;
+    left: 20em;
+}
+.order_info div label{
+    color:white;
+    
+}
+.order_info span{
+    position: relative;
+    color:white;
+    left: 13px;
+    margin-left: 1.2em;
+}
+
+.good_info,.good_info_title,.good_cont {
+    width: 40em;
+    position: relative;
+    left: -5em;
+    margin-top: 1.1em;
+    border-bottom: 2px dotted white;
+}
+.good_info_title span{
+    margin-left: 5em;  
+}
+
+.good_info span{
+    position: relative;
+    left: 0em;
+    margin-left: 6.5em;
+}
+
+.good_cont span{
+
+    left: 25em;
+}

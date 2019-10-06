@@ -11,8 +11,8 @@
 	<meta name="description" content="烤天下酒吧烧烤首创海盗主题酒吧烧烤，烧烤加盟请关注烤天下，在这里可以大快朵颐，在这里可以尽情放肆，喝酒吃肉，打劫社交，烤天下酒吧烧烤加盟，要味道还要腔调，烤天下加盟热线：4006099517">
 	<link rel="shortcut icon" type="image/x-icon" href="../static/img/icon/favicon.ico">
 	<link rel="stylesheet" href="../static/css/home.css">
-	<link rel="stylesheet" href="../static/css/icon.css">
-	<link rel="stylesheet" href="../static/css/food.css">
+    <link rel="stylesheet" href="../static/css/icon.css">
+    <link rel="stylesheet" href="../static/css/success.css">
 	<!--[if lte IE 8]>
 	<link rel="stylesheet" href="css/iehack.css">
 	<script src="js/html5shiv.min.js"></script>
@@ -69,54 +69,60 @@
 <section id="Taste" class="Talents" style="margin-bottom:0;">
 	<div class="container">
 		<div class="item-title">
-			<h1>招牌美食</h1>
-			<h3>Signature food</h3>
+			<a href="/food"><button type="button">&lt;</button>&nbsp;&nbsp;返回菜单</a>
+			<h1>预 定 成 功</h1>
+			<h3>Successful Booking</h3>
 		</div>
-		<div class="row">
-			<div class="col-3">
-				<div class="item-food item-food-1">
-					<a >
-						<div class="select">
-							<img src="../static/img/icon/jia.png" class='add'>
-							<input type="text" value="0" disabled>
-							<img src="../static/img/icon/jian.png" class='del'>
-						</div>
-						<h3>火焰鸡翅</h3>
-					</a>
-				</div>
-			</div>
-
-		</div>
-		<div class="car">
-			<img src="../static/img/icon/car.png" ><br>
-			<span>购物车</span>
-		</div>
-	</div>
+		<div>
+            <div class="tip">
+                <p>订单详情：</p>
+            </div>
+            <div class="order_info">
+                <div>
+                    <label> 订 单 号：</label><span></span><span>order_id</span>
+                </div>
+                <div>
+                   <label> 订 单 时 间：</label><span>date</span>&nbsp;<span>time</span>
+                </div>
+                <div>
+                    <label> 收 货 人：</label><span></span><span>customer</span>
+                </div>
+                <div>
+                    <label> 手 机 号：</label><span></span><span>phone</span>
+                </div>
+                <div>
+                    <label> 收 货 地 址：</label><span>target_addr</span>
+                </div>
+                <div>
+                    <label> 商 品 列 表：</label>
+                    <div class="good_info_title">
+                        <span>序 号</span><span>商 品 名 称</span><span>数 量</span><span>金 额</span>
+                    </div>
+                    <div class="good_info">
+                        <span>01</span><span>烤鸡翅</span><span>5</span><span>18.00</span>
+                    </div>
+                    <div class="good_cont">
+                        <span>总件数：</span><span>5</span><br>
+                        <span>合 计：</span><span>18.00 ￥</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-<div id="dialog" >
-	<div class="title"><span>购 物 车</span><img src="../static/img/icon/cha.png" ></div>
-	<div class="car_info">
-		<table>
-			<tr id="top"><td><span>商品名称</span></td><td><span>商品数量</span></td><td><span>商品价格</span></td></tr>
-			<tr><td><span>鱿鱼 </span></td><td><span>× 3 </span></td><td><span>45 ￥ </span></td></li>
-			<tr><td><span>烤鲍鱼</span></td><td><span>× 3 </span></td><td><span>88 ￥ </span></td></li>
-			<tr id="bottom"><td>合计</td><td>6</td><td>133 ￥</td></tr>
-		</table>
-	</div>
-</div>
+
 
 <!-- Footer -->
-<footer id="footer">
+<!-- <footer id="footer">
 	<div class="container">
-		<div class="copy"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42128102000190" target="_blank"><font color="#ffffff">鄂公网安备 42128102000190号</font></a>&nbsp;&nbsp;开发团队：十月
+		<div class="copy">©AUI 京ICP备15006025号-1  更多模板：<a href="http://www.mycodes.net/" target="_blank"><font color="#ffffff">源码之家</font></a>
 		</div>
 		<div class="copy">
-			Copyright © 2012-2016 www.a-ui.cn <span>地址：武汉市江夏区阳光大道1号武汉纺织大学</span>
+			Copyright © 2012-2016 www.a-ui.cn <span>地址：北京市海淀区北三环西路43号中航广场6层</span>
 		</div>
 	</div>
-</footer>
+</footer> -->
 
-<div class="dialog-backdrop"></div>
 <script src="../static/js/jquery-1.8.3.min.js"></script>
 <script src="../static/js/banner.js"></script>
 <script src="../static/js/navbar.js"></script>
