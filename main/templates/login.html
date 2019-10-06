@@ -22,8 +22,11 @@
 						</div>
 						<form action="" method="post">
 							{% csrf_token %}
+							{% if desc %}
+							<div class="ececk_warning" style="display:inherit"><span class="ececk_warning_text">{{ desc }}</span></div>
+							{% else %}
 							<div class="ececk_warning"><span class="ececk_warning_text"></span></div>
-							
+							{% endif %}
 							<div class="form_text_ipt">
 								<input name="username" id="username" type="text" placeholder="邮箱">
 							</div>
