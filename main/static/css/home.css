@@ -260,7 +260,8 @@ hr {height:0;margin-top:10px;margin-bottom:10px;border:0;border-top:solid 1px #3
 /* food */
 .item-food { margin-bottom:10px}
 .item-food h3{background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0; color:#fff; font-weight:200; padding:10px 0; border-top:2px solid #e4007f; width:100%; font-size:14px; margin:0; position:absolute; bottom:0;}
-.item-food-1 a { background:url("../img/food/f-1.jpg") no-repeat; display:block; background-size:cover; width:100%; text-align:center; height:300px; position:relative;}
+.item-food a { background:url("../img/food/f-1.jpg") no-repeat; display:block; background-size:cover; width:100%; text-align:center; height:300px; position:relative;}
+/* .item-food-1 a { background:url("../img/food/f-1.jpg") no-repeat; display:block; background-size:cover; width:100%; text-align:center; height:300px; position:relative;}
 .item-food-2 a { background:url("../img/food/f-2.jpg") no-repeat; display:block; background-size:cover; width:100%; text-align:center; height:300px; position:relative;}
 .item-food-3 a { background:url("../img/food/f-3.jpg") no-repeat; display:block; background-size:cover; width:100%; text-align:center; height:300px; position:relative;}
 .item-food-4 a { background:url("../img/food/f-4.jpg") no-repeat; display:block; background-size:cover; width:100%; text-align:center; height:300px; position:relative;}
@@ -296,7 +297,7 @@ hr {height:0;margin-top:10px;margin-bottom:10px;border:0;border-top:solid 1px #3
 .item-food-34 a { background:url("../img/food/f-34.jpg") no-repeat; display:block; background-size:cover; width:100%; text-align:center; height:300px; position:relative;}
 .item-food-35 a { background:url("../img/food/f-35.jpg") no-repeat; display:block; background-size:cover; width:100%; text-align:center; height:300px; position:relative;}
 .item-food-36 a { background:url("../img/food/f-36.jpg") no-repeat; display:block; background-size:cover; width:100%; text-align:center; height:300px; position:relative;}
-
+ */
 
 .time-six { background:url("../img/icon/icon-lj.png") no-repeat; background-size:100%; height:300px;text-align:center; margin-bottom:10px; color:#fff; width:100%; padding:30px 20px; }
 .time-six h2 { font-size:18px; color:#fff; font-weight:800}

@@ -59,6 +59,23 @@
 					<li class="pc-nav-menn">
 						<a href="/about">联系我们</a>
 					</li>
+					
+					{% if nickname %}
+						<li>
+							<a href="/user_center">{{ nickname }}</a>
+						</li>
+						<li>
+							<a href="/logout">注销</a>
+						</li>
+					{% else %}
+						<li class="login">
+							<a href="/login">登录</a>
+						</li>
+						<li>
+							<a href="/register">注册</a>
+						</li>
+					{% endif %}
+					
 				</ul>
 			</nav>
 		</div>
@@ -73,19 +90,26 @@
 			<h3>Signature food</h3>
 		</div>
 		<div class="row">
-			<div class="col-3">
-				<div class="item-food item-food-1">
+			<!-- <div class='col-3'>
+				<div class='item-food item-food-1'>
 					<a >
-						<div class="select">
-							<img src="../static/img/icon/jia.png" class='add'>
-							<input type="text" value="0" disabled>
-							<img src="../static/img/icon/jian.png" class='del'>
+						<div class="price">
+							<img src="../static/img/icon/huo.png" >
+							<span>800.5￥</span>
+						</div>
+						<div class='select'>
+							<img src='../static/img/icon/jia.png' class='add'>
+							<input type='text' value='0' disabled>
+							<img src='../static/img/icon/jian.png' class='del'>
 						</div>
 						<h3>火焰鸡翅</h3>
 					</a>
 				</div>
-			</div>
-
+			</div> -->
+		</div>
+		<div class="order">
+			<a href="/order"><img src="../static/img/icon/dingdan.png" ><br></a>
+			<span>&nbsp;订 单</span>
 		</div>
 		<div class="car">
 			<img src="../static/img/icon/car.png" ><br>
@@ -96,12 +120,12 @@
 <div id="dialog" >
 	<div class="title"><span>购 物 车</span><img src="../static/img/icon/cha.png" ></div>
 	<div class="car_info">
-		<table>
-			<tr id="top"><td><span>商品名称</span></td><td><span>商品数量</span></td><td><span>商品价格</span></td></tr>
-			<tr><td><span>鱿鱼 </span></td><td><span>× 3 </span></td><td><span>45 ￥ </span></td></li>
-			<tr><td><span>烤鲍鱼</span></td><td><span>× 3 </span></td><td><span>88 ￥ </span></td></li>
-			<tr id="bottom"><td>合计</td><td>6</td><td>133 ￥</td></tr>
-		</table>
+			<table>
+				{% csrf_token %}
+				<tr id="top"><td><span>商品名称</span></td><td><span>商品数量</span></td><td><span>商品价格</span></td></tr>
+				<tr id="sum"><td>合计</td><td> 件</td><td> ￥</td></tr>
+				<tr id="btn"><td colspan='3' ><button type="button" id="clear">清 空</button><button type="button" id="sub_order">提 交 订 单</button></td>
+			</table>
 	</div>
 </div>
 

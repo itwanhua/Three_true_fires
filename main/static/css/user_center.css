@@ -199,3 +199,10 @@ header{
 .other_right a:hover{
 	color:#AEEEEE;
 }
+
+
+.user_center_box{
+	width: 720px;
+	background: #FFFFFF;
+	margin: 0px auto;
+}

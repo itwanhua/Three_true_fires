@@ -7,6 +7,7 @@ from django.db import models
 class user_acount(models.Model):
     uname = models.CharField(max_length=100, primary_key=True)
     upass = models.CharField(max_length=100)
+    nickname = models.CharField(max_length=100, unique=True)
 
 class foods(models.Model):
     fid = models.AutoField(auto_created=1000, primary_key=True)
