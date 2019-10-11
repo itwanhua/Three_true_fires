@@ -1,24 +1,104 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<meta charset="utf-8">
+		<!-- <meta charset="utf-8">
 		<title>注册界面</title>
 		<link rel="stylesheet" href="../static/css/reset.css" />
 		<link rel="stylesheet" href="../static/css/user_center.css" />
 		<link rel="stylesheet" href="../static/css/font-awesome.min.css" />
+		<link rel="shortcut icon" type="image/x-icon" href="../static/img/icon/favicon.ico"> -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="description" content="">
+		<meta name="author" content="BBQ">
+		<title>招牌美食-联系我们-三味真火酒吧烧烤加盟官网 酒吧文化烧烤领导者 </title>
+		<meta name="keywords" content="三味真火,三味真火酒吧烧烤,三味真火加盟,烧烤加盟">
+		<meta name="description" content="三味真火酒吧烧烤首创海盗主题酒吧烧烤，烧烤加盟请关注三味真火，在这里可以大快朵颐，在这里可以尽情放肆，喝酒吃肉，打劫社交，三味真火酒吧烧烤加盟，要味道还要腔调，三味真火加盟热线：4006099517">
 		<link rel="shortcut icon" type="image/x-icon" href="../static/img/icon/favicon.ico">
+		<link rel="stylesheet" href="../static/css/home.css">
+		<link rel="stylesheet" href="../static/css/icon.css">
+		<link rel="stylesheet" href="../static/css/food.css">
+
+		<link rel="stylesheet" href="../static/css/reset.css" />
+		<link rel="stylesheet" href="../static/css/user_center.css" />
+		<link rel="stylesheet" href="../static/css/font-awesome.min.css" />
+		<link rel="shortcut icon" type="image/x-icon" href="../static/img/icon/favicon.ico">
+		<!--[if lte IE 8]>
+		<link rel="stylesheet" href="css/iehack.css">
+		<script src="js/html5shiv.min.js"></script>
+		<script src="js/respond.min.js"></script>
+		<![endif]-->
+		<script>
+			var _hmt = _hmt || [];
+			(function() {
+				var hm = document.createElement("script");
+				hm.src = "//hm.baidu.com/hm.js?05e4a554b37e54a1436450128ce7173c";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
 	</head>
 	<body>
-		<div class="wrap login_wrap">
-			<div class="content">
-				
-				<div class="logo"></div>
-				
-				<div class="login_box">	
-					
-					<div class="login_form">
-						<div class="login_title">
-							个人信息
+		<!-- Header -->
+		<header id="header" class="">
+		<div class="container">
+			<div class="global-nav">
+				<button class="navbar-toggle">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="brand" href="/index">三味真火</a>
+				<nav class="navbar">
+					<ul class="nav">
+						<li class="pc-nav-home">
+							<a href="/index">首页</a>
+						</li>
+						<li class="pc-nav-food">
+							<a href="/food"  class="food-current">招牌美食</a>
+						</li>
+						<li class="pc-nav-char">
+							<a href="/activity">特色活动</a>
+						</li>
+						<li class="pc-nav-join">
+							<a href="/join">招商加盟</a>
+						</li>
+						<li class="pc-nav-ente">
+							<a href="/profile">企业概况</a>
+						</li>
+						<li class="pc-nav-menn">
+							<a href="/about">联系我们</a>
+						</li>
+						
+						{% if nickname %}
+							<li class="nickname">
+								<a href="#">{{ nickname }}</a>
+							</li>
+							<li>
+								<a href="/logout">注销</a>
+							</li>
+						{% else %}
+							<li class="login">
+								<a href="/login">登录</a>
+							</li>
+							<li>
+								<a href="/register">注册</a>
+							</li>
+						{% endif %}
+						
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	
+	<!-- Centers -->
+	<div style="position: relative; top: 158px; height: 500px">
+			<div class="user_box">	
+					<div class="user_form">
+						<div class="user_title">
+							个人资料
 						</div>
 						<form action="#" method="post">
 							{% csrf_token %}
@@ -27,22 +107,102 @@
 							{% else %}
 							<div class="ececk_warning"><span class="ececk_warning_text"></span></div>
 							{% endif %}
+
 							<div class="form_text_ipt">
-								<input name="username" id="username" type="text" placeholder="邮箱">
+								<label>用户名：</label><input name="nickname" id="nickname" type="text" placeholder="用户名（只能修改两次！）" value="{{ nickname }}" disabled>
 							</div>
+
 							<div class="form_text_ipt">
-								<input name="password" id="password" type="password" placeholder="密码">
+								<label>默认下单联系人：</label><input name="realname" id="realname" type="text" placeholder="默认下单联系人" disabled>
 							</div>
+
 							<div class="form_text_ipt">
-								<input name="password2" id="password2" type="password" placeholder="重复密码">
+								<label>默认下单手机号：</label><input name="phone" id="phone" type="text" placeholder="默认下单手机号" disabled>
 							</div>
+
 							<div class="form_text_ipt">
-								<input name="code" id="code" type="text" placeholder="验证码">
-								<button type="button" id="send_code">发送验证码</button>
+								<label>默认派送地址：</label><input name="address" id="address" type="text" placeholder="默认派送地址" disabled>
+							</div>
+
+							<div class="form_text_ipt">
+								<label>默认下单备注：</label><input name="remarks" id="remarks" type="text" placeholder="默认下单备注" disabled>
 							</div>
 							
 							<div class="form_btn">
-								<button type="submit" id="submit">注册</button>
+								<button type="button" id="modify">修改</button><button type="submit" id="submit" hidden>提交</button>
+							</div>
+					
+						</form>
+					</div>
+				</div>
+	
+	</div>
+	
+	<!-- Footer -->
+	<footer id="footer" style="position: relative; top: 158px">
+		<div class="container">
+			<div class="copy"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42128102000190" target="_blank"><font color="#ffffff">鄂公网安备 42128102000190号</font></a>&nbsp;&nbsp;开发团队：十月
+			</div>
+			<div class="copy">
+				Copyright © 2012-2016 www.a-ui.cn <span>地址：武汉市江夏区阳光大道1号武汉纺织大学</span>
+			</div>
+		</div>
+	</footer>
+	
+	<div class="dialog-backdrop"></div>
+	<script src="../static/js/jquery-1.8.3.min.js"></script>
+	<script src="../static/js/banner.js"></script>
+	<script src="../static/js/navbar.js"></script>
+	<script src="../static/js/web.core.js"></script>
+	<script src="../static/js/web.adtabs.js"></script>
+	<script src="../static/js/web.subnav.js"></script>
+	<script src="../static/js/web.ui.js"></script>
+	<script src="../static/js/select_food.js"></script>
+	<script src="../static/js/user_center.js"></script>
+
+		
+		<!-- <div class="wrap user_wrap">
+			<div class="content">
+				
+				<div class="logo"></div>
+				
+				<div class="user_box">	
+					
+					<div class="user_form">
+						<a href="/food"><button type="button">&lt;</button>&nbsp;&nbsp;返回菜单</a>
+						<div class="user_title">
+							个人资料
+						</div>
+						<form action="#" method="post">
+							{% csrf_token %}
+							{% if desc %}
+							<div class="ececk_warning" style="display:inherit"><span class="ececk_warning_text">{{ desc }}</span></div>
+							{% else %}
+							<div class="ececk_warning"><span class="ececk_warning_text"></span></div>
+							{% endif %}
+
+							<div class="form_text_ipt">
+								<label>用户名：</label><input name="nickname" id="nickname" type="text" placeholder="用户名（只能修改两次！）" value="{{ nickname }}">
+							</div>
+
+							<div class="form_text_ipt">
+								<label>默认下单联系人：</label><input name="realname" id="realname" type="text" placeholder="默认下单联系人">
+							</div>
+
+							<div class="form_text_ipt">
+								<label>默认下单手机号：</label><input name="phone" id="phone" type="text" placeholder="默认下单手机号">
+							</div>
+
+							<div class="form_text_ipt">
+								<label>默认派送地址：</label><input name="address" id="address" type="text" placeholder="默认派送地址">
+							</div>
+
+							<div class="form_text_ipt">
+								<label>默认下单备注：</label><input name="remarks" id="remarks" type="text" placeholder="默认下单备注">
+							</div>
+							
+							<div class="form_btn">
+								<button type="button" id="modify">修改</button>
 							</div>
 					
 						</form>
@@ -51,6 +211,6 @@
 			</div>
 		</div>
 		<script type="text/javascript" src="../static/js/jquery.min.js" ></script>
-		<div style="text-align:center;"></div>
+		<div style="text-align:center;"></div> -->
 	</body>
 </html>

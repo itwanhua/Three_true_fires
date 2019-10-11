@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html>	
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,8 +11,8 @@
 	<meta name="description" content="三味真火酒吧烧烤首创海盗主题酒吧烧烤，烧烤加盟请关注三味真火，在这里可以大快朵颐，在这里可以尽情放肆，喝酒吃肉，打劫社交，三味真火酒吧烧烤加盟，要味道还要腔调，三味真火加盟热线：4006099517">
 	<link rel="shortcut icon" type="image/x-icon" href="../static/img/icon/favicon.ico">
 	<link rel="stylesheet" href="../static/css/home.css">
-	<link rel="stylesheet" href="../static/css/icon.css">
-	<link rel="stylesheet" href="../static/css/food.css">
+    <link rel="stylesheet" href="../static/css/icon.css">
+    <link rel="stylesheet" href="../static/css/order_center.css">
 	<!--[if lte IE 8]>
 	<link rel="stylesheet" href="css/iehack.css">
 	<script src="js/html5shiv.min.js"></script>
@@ -25,7 +25,7 @@
             hm.src = "//hm.baidu.com/hm.js?05e4a554b37e54a1436450128ce7173c";
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
-        })();
+		})();
 	</script>
 </head>
 <body>
@@ -59,72 +59,42 @@
 					<li class="pc-nav-menn">
 						<a href="/about">联系我们</a>
 					</li>
-					
-					{% if nickname %}
-						<li class="user">
-							<a id="nickname" href="#">{{ nickname }}</a>
-						</li>
-						<li class="user_menu" hidden tabindex="-1">
-							<a id="user_center" href="/user_center">个人资料</a>
-							<a id="order_center" href="/order_center">订单中心</a>
-							<a id="logout" href="/logout">退出登录</a>
-						</li>
-
-					{% else %}
-						<li class="login">
-							<a href="/login">登录</a>
-						</li>
-						<li>
-							<a href="/register">注册</a>
-						</li>
-					{% endif %}
-					
 				</ul>
 			</nav>
 		</div>
 	</div>
+	
 </header>
 
 <!-- Product -->
 <section id="Taste" class="Talents" style="margin-bottom:0;">
+	
 	<div class="container">
 		<div class="item-title">
-			<h1>招牌美食</h1>
-			<h3>Signature food</h3>
+			<a href="/food"><button type="button">&lt;</button>&nbsp;&nbsp;返 回</a>
+			<h1>订单中心</h1>
 		</div>
-		<div class="row">
+		<div class="info">
+			{% csrf_token %}
+			<table class="order_info">
+				<tr><th>订单号</th><th>时间</th><th>姓名</th><th>电话</th><th>订单总价</th><th>地址</th></tr>
+			</table>
 
 		</div>
-		<div class="car">
-			<img src="../static/img/icon/car.png" ><br>
-			<span>购物车</span>
+
+		<div class="order_detail" style="height: 620px;" hidden>
+			<table class="odet">
+				<tr><th>菜名</th><th>数量</th><th>总价</th></tr>
+			</table>
 		</div>
 	</div>
 </section>
-<div id="dialog" >
-	<div class="title"><span>购 物 车</span><img src="../static/img/icon/cha.png" ></div>
-	<div class="car_info">
-			<table>
-				{% csrf_token %}
-				<tr id="top"><td><span>商品名称</span></td><td><span>商品数量</span></td><td><span>商品价格</span></td></tr>
-				<tr id="sum"><td>合计</td><td id="sum_cnt"> 件</td><td id="sum_pic"> ￥</td></tr>
-				<tr id="btn"><td colspan='3' ><button type="button" id="clear">清 空</button><button type="button" id="sub_order">提 交 订 单</button></td>
-			</table>
-	</div>
-</div>
 
 <!-- Footer -->
-<footer id="footer">
-	<div class="container">
-		<div class="copy"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42128102000190" target="_blank"><font color="#ffffff">鄂公网安备 42128102000190号</font></a>&nbsp;&nbsp;开发团队：十月
-		</div>
-		<div class="copy">
-			Copyright © 2012-2016 www.a-ui.cn <span>地址：武汉市江夏区阳光大道1号武汉纺织大学</span>
-		</div>
-	</div>
-</footer>
+<footer id="footer" style="background: black">
+	
+	</footer>
 
-<div class="dialog-backdrop"></div>
 <script src="../static/js/jquery-1.8.3.min.js"></script>
 <script src="../static/js/banner.js"></script>
 <script src="../static/js/navbar.js"></script>
@@ -132,6 +102,6 @@
 <script src="../static/js/web.adtabs.js"></script>
 <script src="../static/js/web.subnav.js"></script>
 <script src="../static/js/web.ui.js"></script>
-<script src="../static/js/select_food.js"></script>
+<script src="../static/js/order_center.js"></script>
 </body>
 </html>

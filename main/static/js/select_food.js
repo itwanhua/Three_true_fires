@@ -100,14 +100,20 @@ $(function(){
 
     function add(){
         $('.car_info .good_list').remove()
+        var sum = 0;
+        var count = 0;
         for(var i in foods){
+            count += foods[i][0];
             var pic = foods[i][0] * foods[i][1]
+            sum += pic
             $('.car_info #top').after(
             "<tr class='good_list'><td><span name='good_name'>"+i+"</span></td><td><span name='good_count'>×"+foods[i][0] +"</span></td><td><span name='good_price'>"+pic+ "￥</span></td>"
             )
         }
-        
+        $('.car_info #sum_cnt').html(count+"件")
+        $('.car_info #sum_pic').html(sum +"￥")
     };
+
     
     $("#clear").on("click",function(){
         $('.car_info .good_list').remove()
@@ -115,7 +121,10 @@ $(function(){
            foods[j][2].val(0)
         }
         foods = []
+        $('.car_info #sum_cnt').html("件")
+        $('.car_info #sum_pic').html("￥")
     });
+
 
     $(".car_info").delegate('#sub_order','click',function(){
         var gname = new Array()
@@ -139,6 +148,12 @@ $(function(){
                     order_name:JSON.stringify(gname),
                     order_count:JSON.stringify(gcont),
                     order_price:JSON.stringify(gpic),
+                    sum_price:$('.car_info #sum_pic').html(),
+                    sum_count: $('.car_info #sum_cnt').html()
+                },
+                success:function(data){  
+                    localStorage.setItem('callbackHTML',data);
+                    window.location.href = window.location.href.split('/food')[0] + '/submit';
                 },
                 error:function(){
                     alert("提交失败，请检查网络！")
@@ -146,6 +161,7 @@ $(function(){
            });
         }
     });
+
 
 
     $('.car').on('click',function(){
@@ -162,6 +178,16 @@ $(function(){
     $('.title img').on('click',function(){
         $('#dialog').hide("slow"); 
     });
+
+
+    // 用户中心点击事件
+    $("#nickname").bind({
+        "click":function(){
+            $(".user").hide()
+            $(".user_menu").show()
+        },
+    });
+
 })
 
 

@@ -24,7 +24,7 @@ def send_mail(data, receiver):
     message['From'] = Header("wh@ithz.xyz", 'utf-8')
     message['To'] =  Header(receiver, 'utf-8')
     
-    subject = '”三味真火“注册验证码'
+    subject = '”三味真火“'
     message['Subject'] = Header(subject, 'utf-8')
       
     try:

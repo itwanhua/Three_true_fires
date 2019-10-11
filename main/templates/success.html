@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html>	
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta name="description" content="">
 	<meta name="author" content="BBQ">
-	<title>招牌美食-联系我们-烤天下酒吧烧烤加盟官网 酒吧文化烧烤领导者 </title>
-	<meta name="keywords" content="烤天下,烤天下酒吧烧烤,烤天下加盟,烧烤加盟">
-	<meta name="description" content="烤天下酒吧烧烤首创海盗主题酒吧烧烤，烧烤加盟请关注烤天下，在这里可以大快朵颐，在这里可以尽情放肆，喝酒吃肉，打劫社交，烤天下酒吧烧烤加盟，要味道还要腔调，烤天下加盟热线：4006099517">
+	<title>招牌美食-联系我们-三味真火酒吧烧烤加盟官网 酒吧文化烧烤领导者 </title>
+	<meta name="keywords" content="三味真火,三味真火酒吧烧烤,三味真火加盟,烧烤加盟">
+	<meta name="description" content="三味真火酒吧烧烤首创海盗主题酒吧烧烤，烧烤加盟请关注三味真火，在这里可以大快朵颐，在这里可以尽情放肆，喝酒吃肉，打劫社交，三味真火酒吧烧烤加盟，要味道还要腔调，三味真火加盟热线：4006099517">
 	<link rel="shortcut icon" type="image/x-icon" href="../static/img/icon/favicon.ico">
 	<link rel="stylesheet" href="../static/css/home.css">
     <link rel="stylesheet" href="../static/css/icon.css">
@@ -25,7 +25,7 @@
             hm.src = "//hm.baidu.com/hm.js?05e4a554b37e54a1436450128ce7173c";
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
-        })();
+		})();
 	</script>
 </head>
 <body>
@@ -38,7 +38,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="brand" href="/index">烤天下</a>
+			<a class="brand" href="/index">三味真火</a>
 			<nav class="navbar">
 				<ul class="nav">
 					<li class="pc-nav-home">
@@ -63,66 +63,64 @@
 			</nav>
 		</div>
 	</div>
+	
 </header>
 
 <!-- Product -->
 <section id="Taste" class="Talents" style="margin-bottom:0;">
+	
 	<div class="container">
 		<div class="item-title">
 			<a href="/food"><button type="button">&lt;</button>&nbsp;&nbsp;返回菜单</a>
 			<h1>预 定 成 功</h1>
 			<h3>Successful Booking</h3>
 		</div>
-		<div>
+		<div class="info">
             <div class="tip">
                 <p>订单详情：</p>
             </div>
             <div class="order_info">
+					{% csrf_token %}
                 <div>
-                    <label> 订 单 号：</label><span></span><span>order_id</span>
+                    <label> 订 单 号：</label><span id="order_id">{{order_id}}</span>
                 </div>
                 <div>
-                   <label> 订 单 时 间：</label><span>date</span>&nbsp;<span>time</span>
+                   <label> 订 单 时 间：</label><span id="time">{{time}}</span>
                 </div>
                 <div>
-                    <label> 收 货 人：</label><span></span><span>customer</span>
+                    <label> 收 货 人：</label><span><input id="customer" type="text" value="{{customer}}"></span>
                 </div>
                 <div>
-                    <label> 手 机 号：</label><span></span><span>phone</span>
+                    <label> 手 机 号：</label><span><input id="phone" type="text" value="{{phone}}"></span>
                 </div>
                 <div>
-                    <label> 收 货 地 址：</label><span>target_addr</span>
+                    <label>收 货 地 址：</label><span><input id="target_addr" type="text" value="{{target_addr}}"></span>
+				</div>
+				<div>
+                    <label class="remarks_title">备 注：</label><span><textarea id="remarks" type="text" >{{remarks}}</textarea></span>
                 </div>
                 <div>
-                    <label> 商 品 列 表：</label>
-                    <div class="good_info_title">
-                        <span>序 号</span><span>商 品 名 称</span><span>数 量</span><span>金 额</span>
-                    </div>
-                    <div class="good_info">
-                        <span>01</span><span>烤鸡翅</span><span>5</span><span>18.00</span>
-                    </div>
+					<label> 商 品 列 表：</label>
+					<table>
+						<tr class="good_info_title"><td>商 品 名 称</td><td>数 量</td><td>金 额</td></tr>
+						{% for n, c, p in order_list %}
+							<tr class="good_info"><td class="fname">{{n}}</td><td class="fcnt">{{c}}</td><td class="fpic">{{p}}</td></tr>
+						{% endfor %}
+					</table>
                     <div class="good_cont">
-                        <span>总件数：</span><span>5</span><br>
-                        <span>合 计：</span><span>18.00 ￥</span>
+                        <span>总件数：</span><span id="sum_cnt">{{sum_cnt}} </span><span>件</span><br>
+                        <span>合&nbsp;&nbsp;计：</span><span id="sum_pic">{{sum_pic}} </span><span>￥</span>
                     </div>
-                </div>
+				</div>
             </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- Footer -->
-<!-- <footer id="footer">
-	<div class="container">
-		<div class="copy">©AUI 京ICP备15006025号-1  更多模板：<a href="http://www.mycodes.net/" target="_blank"><font color="#ffffff">源码之家</font></a>
 		</div>
-		<div class="copy">
-			Copyright © 2012-2016 www.a-ui.cn <span>地址：北京市海淀区北三环西路43号中航广场6层</span>
+		<div class="pay">
+			<button id="pay_btn" type="button">确 认 支 付</button>
 		</div>
 	</div>
-</footer> -->
 
+	
+</section>
 <script src="../static/js/jquery-1.8.3.min.js"></script>
 <script src="../static/js/banner.js"></script>
 <script src="../static/js/navbar.js"></script>
@@ -130,6 +128,6 @@
 <script src="../static/js/web.adtabs.js"></script>
 <script src="../static/js/web.subnav.js"></script>
 <script src="../static/js/web.ui.js"></script>
-<script src="../static/js/select_food.js"></script>
+<script src="../static/js/order.js"></script>
 </body>
 </html>

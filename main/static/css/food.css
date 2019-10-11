@@ -114,4 +114,20 @@
     border-right:none;
 }
 
+.user_menu{
+    background: white;
+    position: relative;
+    width: 90px;
+    height: 80px;
+
+}
+
+#user_center, #order_center, #logout{
+    display: inline-block;
+    height: 24px;
+    margin: 0;
+    padding: 0px;
+}
+
+
 

@@ -1,5 +1,5 @@
 
-html,body {margin:0;padding:0;height:100%; font-family: PingFang SC,Helvetica Neue,Helvetica,Arial,Hiragino Sans GB,Microsoft Yahei,\\5FAE软雅黑,STHeiti,\\534E文细黑,sans-serif;background:#121212;}
+html,body {margin:0;padding:0;height:100%; font-family: PingFang SC,Helvetica Neue,Helvetica,Arial,Hiragino Sans GB,Microsoft Yahei,\\5FAE软雅黑,STHeiti,\\534E文细黑,sans-serif;background:black;}
 
 * {-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
 button:focus { outline:none;}

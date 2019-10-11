@@ -101,7 +101,7 @@
 .pay{
     position: relative;
     left: 26em;
-    top:6em;
+    top:3em;
     width: 400px;
     margin-bottom: 55px;
 }
@@ -117,3 +117,49 @@
     color: white;
     text-align: center;
 }
+
+table {
+    margin-top: 30px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    table-layout: fixed;
+    position: relative;
+    left:-90px;
+}
+
+table tr {
+    height: 40px;
+}
+
+table, th, td {
+    /* border-top: 2px solid greenyellow; */
+    border-bottom: 2px solid greenyellow;
+    border-collapse: collapse;
+    font-size: 1em;
+    padding: 2px;
+    width: 80em;
+}
+.addr {
+    max-width: 50px;
+}
+
+th, td {
+    white-space: nowrap;
+    overflow: hidden;
+    width: auto;
+    text-overflow: ellipsis;
+}
+
+#details {
+    color: white;
+}
+
+#details:hover{
+    color: skyblue;
+}
+
+#details:hover{
+    color: skyblue;
+}
+
